@@ -2,6 +2,8 @@ class Listing < ApplicationRecord
 	if Rails.env.development?
 	has_attached_file :image, styles: { medium: "200x>", thumb: "100x>" }
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/ 
+	validates :name, :description, :price, presence: true
+  	validates :price, numericality: { greater_than: 0 }
 	else
 	has_attached_file :image, styles: { medium: "200x>", thumb: "100x>" },
 					  :default_url=> "images.jpeg",
@@ -16,6 +18,8 @@ class Listing < ApplicationRecord
 						validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/ 
 						def s3_credentials 
 						{:bucket => "hifashion-images1", :access_key_id => ENV["access_key_id"]  , :secret_access_key => ENV["secret_access_key"]} 
-						end 
+						validates :name, :description, :price, presence: true
+  						validates :price, numericality: { greater_than: 0 }
 						end 
 	end
+end
