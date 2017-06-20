@@ -33,6 +33,7 @@ gem 'aws-sdk', '~> 2.3.0'
 gem "fog"
 gem 'carrierwave', '~> 1.0'
 gem "figaro"
+gem 'devise'
 
 
 group :production do
