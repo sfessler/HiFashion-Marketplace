@@ -86,7 +86,7 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
 
 # Required for Devise. Remember to change localhost:3000 to actual application host
-  config.action_mailer.default_url_options = { host: 'https://localhost:3000'}  
+  config.action_mailer.default_url_options = { host: 'https://hifashion.herokuapp.com'}  
   end
 
   # Do not dump schema after migrations.
