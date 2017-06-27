@@ -6,7 +6,7 @@ class Listing < ApplicationRecord
   	validates :price, numericality: { greater_than: 0 }
 	else
 	has_attached_file :image, styles: { medium: "200x>", thumb: "100x>" },
-					  :default_url=> "images.jpeg",
+					  #:default_url=> "images.jpeg",
 					  :path => ":style/:id_:filename",
     				  :storage => :s3,
     			   	  :s3_region => "us-east-2",
