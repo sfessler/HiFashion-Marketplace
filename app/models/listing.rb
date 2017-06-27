@@ -6,6 +6,7 @@ class Listing < ApplicationRecord
   	validates :price, numericality: { greater_than: 0 }
 	else
 	has_attached_file :image, styles: { medium: "200x>", thumb: "100x>" },
+					  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/ 
 					  #:default_url=> "images.jpeg",
 					  :path => ":style/:id_:filename",
     				  :storage => :s3,
@@ -17,7 +18,6 @@ class Listing < ApplicationRecord
 						def s3_credentials 
 						{:bucket => "hifashion-images1", :access_key_id => ENV["access_key_id"]  , :secret_access_key => ENV["secret_access_key"]} 
 
-						validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/ 
 						validates :name, :description, :price, presence: true
   						validates :price, numericality: { greater_than: 0 }
 						end 
