@@ -14,10 +14,10 @@ class Listing < ApplicationRecord
     				  :url => ":s3.amazonaws.com/hifashion-images", 
 						
 						:s3_credentials => Proc.new{|a| a.instance.s3_credentials } 
-
-						validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/ 
 						def s3_credentials 
 						{:bucket => "hifashion-images1", :access_key_id => ENV["access_key_id"]  , :secret_access_key => ENV["secret_access_key"]} 
+
+						validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/ 
 						validates :name, :description, :price, presence: true
   						validates :price, numericality: { greater_than: 0 }
 						end 
