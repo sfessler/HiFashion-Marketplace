@@ -3,7 +3,7 @@ class Listing < ApplicationRecord
 	        has_attached_file :image, styles: { medium: "200x>", thumb: "100x>" }
 	else
 	        has_attached_file :image, styles: { medium: "200x>", thumb: "100x>" },
-					  :default_url=> "https://s3-us-east-2.amazonaws.com/hifashion-images1/original/5_images.jpeg?1498756122",
+					  :default_url=> "https://s3-us-east-2.amazonaws.com/hifashion-images1/images.jpeg",
 					  :path => ":style/:id_:filename",
     				  :storage => :s3,
     			   	  :s3_region => "us-east-2",
