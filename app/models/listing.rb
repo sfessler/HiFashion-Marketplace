@@ -19,6 +19,7 @@ class Listing < ApplicationRecord
 
        # Keep your associations together
        belongs_to :user
+       has_many :orders
 
        # Define custom methods at the end of the model file
        def s3_credentials 
