@@ -37,6 +37,7 @@ gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
 gem 'erubis'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
 group :production do
